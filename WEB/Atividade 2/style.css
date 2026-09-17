@@ -1,0 +1,318 @@
+/* ==========================================================================
+   Disciplina INF321 - Unidade 2.2: Desenvolvimento Front-End - CSS
+   Atividade Prática 2: Estilização do Catálogo de Produtos
+   Aluno: Gabriel Ferreira - 105491
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Regras Globais, Box Model e Herança (Slide 27, 31, 46)
+   -------------------------------------------------------------------------- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333333;
+    background-color: #f4f6f8;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1100px;
+    line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   2. Cabeçalho e Títulos (Slide 7, 8, 20, 22, 26, 62)
+   -------------------------------------------------------------------------- */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 25px 20px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+}
+
+h1, h2, h3 {
+    color: #1e293b;
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+/* --------------------------------------------------------------------------
+   3. Parágrafos (Slide 7, 19, 22, 62)
+   -------------------------------------------------------------------------- */
+p {
+    font-size: 16px;
+    color: #333333;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 16px;
+    color: #64748b;
+    margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   4. Imagens (Slide 62 da Unidade 2.2 / Slide 25 da Unidade 2.1)
+   -------------------------------------------------------------------------- */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --------------------------------------------------------------------------
+   5. Cards de Produtos e Layout Flexbox (Slide 37, 38, 39, 42, 48, 62, 63)
+   -------------------------------------------------------------------------- */
+ul.produtos-container,
+.produtos-container {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Seletor por classe e elemento: .card (Slide 42) */
+li.card,
+.card {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    background-color: #ffffff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Seletores descendentes para os elementos do card (Slide 18) */
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #1e293b;
+}
+
+.card p.descricao {
+    font-size: 14px;
+    color: #555555;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.card p.preco {
+    font-size: 18px;
+    font-weight: bold;
+    color: #16a34a; /* Destaque verde para o preço conforme Slide 61 */
+    margin-bottom: 15px;
+}
+
+/* --------------------------------------------------------------------------
+   6. Botões e Pseudo-classes (Slide 43, 44, 62)
+   -------------------------------------------------------------------------- */
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background-color: #2563eb;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+}
+
+button:focus {
+    outline: 2px solid #1e293b;
+    outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   7. Tabela de Produtos (Slide 62 da Unidade 2.2 / Slide 30 da Unidade 2.1)
+   -------------------------------------------------------------------------- */
+#tabela-produtos {
+    background-color: #ffffff;
+    padding: 25px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+}
+
+.tabela-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    border: 1px solid #e2e8f0;
+}
+
+table th, table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 15px;
+}
+
+table th {
+    background-color: #2563eb;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+table tr:hover {
+    background-color: #f8fafc;
+}
+
+/* --------------------------------------------------------------------------
+   8. Formulário de Cadastro (Slide 45, 62 da Unidade 2.2 / Slide 33-36 da Unidade 2.1)
+   -------------------------------------------------------------------------- */
+#cadastro-produto {
+    background-color: #ffffff;
+    padding: 30px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: 0 auto 40px auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #333333;
+}
+
+label:first-of-type {
+    margin-top: 0;
+}
+
+input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Pseudo-classe de estado de formulário (Slide 45) */
+input:focus {
+    outline: 2px solid #2563eb;
+}
+
+#form-produto button {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* --------------------------------------------------------------------------
+   9. Links e Rodapé (Slide 62 da Unidade 2.2 / Slide 21, 24 da Unidade 2.1)
+   -------------------------------------------------------------------------- */
+a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #1d4ed8;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 1px solid #e2e8f0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 6px 0;
+}
+
+/* --------------------------------------------------------------------------
+   10. Desafio Extra: Responsividade (Slide 63 e slides 48, 53-57)
+       - Desktop: horizontal flex (lado a lado)
+       - Celular (≤ 600px): empilhado verticalmente com .card ocupando 100%
+   -------------------------------------------------------------------------- */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    /* Layout empilhado verticalmente para facilitar leitura em telas estreitas */
+    ul.produtos-container,
+    .produtos-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* .card assume 100% da largura disponível (Slide 48, 53-57) */
+    li.card,
+    .card {
+        width: 100%;
+    }
+
+    #tabela-produtos,
+    #cadastro-produto {
+        padding: 15px;
+    }
+
+    table th, table td {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+}

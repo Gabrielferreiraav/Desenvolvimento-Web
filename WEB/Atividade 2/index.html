@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Produtos - Disciplina INF321</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Catálogo de Produtos Da Disciplina INF321</h1>
+        <p>Confira nossa seleção exclusiva de itens disponíveis.</p>
+    </header>
+
+    <main>
+        <section id="produtos">
+            <h2>Produtos Disponíveis</h2>
+            <ul class="produtos-container">
+                <li class="card">
+                    <img src="https://semanadeinformatica.ufv.br/2026/wp-content/uploads/sites/9/2026/08/KIT1.png" alt="Kit Dev Starter">
+                    <h3>Kit Dev Starter</h3>
+                    <p class="descricao">Inclui: Caderno + Caneta + Ecobag Kit</p>
+                    <p class="preco"><strong>R$ 39,00</strong></p>
+                    <button type="button">Comprar</button>
+                </li>
+                <li class="card">
+                    <img src="https://semanadeinformatica.ufv.br/2026/wp-content/uploads/sites/9/2026/08/bottons.png" alt="Kit 3 Bottons">
+                    <h3>Kit 3 Bottons</h3>
+                    <p class="descricao">Kit com 3 botons de 3,5 cm. Obs: Não é possível escolher as estampas, os bottons serão entregues aleatoriamente.</p>
+                    <p class="preco"><strong>R$ 15,90</strong></p>
+                    <button type="button">Comprar</button>
+                </li>
+                <li class="card">
+                    <img src="https://semanadeinformatica.ufv.br/2026/wp-content/uploads/sites/9/2026/08/adesivos.jpeg" alt="Kit 3 Adesivos">
+                    <h3>Kit 3 Adesivos</h3>
+                    <p class="descricao">Kit com 3 adesivos de 3,5 cm. Obs: Não é possível escolher as estampas, os adesivos serão entregues aleatoriamente.</p>
+                    <p class="preco"><strong>R$ 5,00</strong></p>
+                    <button type="button">Comprar</button>
+                </li>
+            </ul>
+        </section>
+
+        <section id="tabela-produtos">
+            <h2>Resumo dos Produtos</h2>
+            <div class="tabela-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Descrição</th>
+                            <th>Preço</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Kit Dev Starter</td>
+                            <td>Inclui: Caderno + Caneta + Ecobag Kit</td>
+                            <td>R$ 39,00</td>
+                        </tr>
+                        <tr>
+                            <td>Kit 3 Bottons</td>
+                            <td>Kit com 3 botons de 3,5 cm (estampas aleatórias)</td>
+                            <td>R$ 15,90</td>
+                        </tr>
+                        <tr>
+                            <td>Kit 3 Adesivos</td>
+                            <td>Kit com 3 adesivos de 3,5 cm (estampas aleatórias)</td>
+                            <td>R$ 5,00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="cadastro-produto">
+            <h2>Cadastrar Novo Produto</h2>
+            <form id="form-produto" action="#" method="post">
+                <label for="nome_produto">Nome do produto:</label>
+                <input type="text" id="nome_produto" name="nome_produto" required>
+
+                <label for="preco_produto">Preço (R$):</label>
+                <input type="number" step="0.01" id="preco_produto" name="preco_produto" required>
+
+                <label for="imagem_produto">URL da Imagem:</label>
+                <input type="url" id="imagem_produto" name="imagem_produto">
+
+                <button type="submit">Cadastrar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Gabriel Ferreira - 105491. Disciplina INF 321.</p>
+        <p>Visite a <a href="https://semanadeinformatica.ufv.br/2026/loja/" target="_blank" rel="noopener noreferrer">Loja Oficial da Semana de Informática da UFV</a></p>
+    </footer>
+</body>
+</html>
