@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Disciplina INF 321</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Bem-vindo à Disciplina INF 321</h1>
+            <p>Esta é a página inicial da disciplina INF 321.</p>
+        </header>
+        <main>
+            <section id="apresentacao">
+                <h2>Apresentação da disciplina INF 321</h2>
+                <p>Aqui você encontrará informações sobre a disciplina INF 321.</p>
+                <img src="https://img.magnific.com/vetores-gratis/internet-world-wide-web-com-degrade_78370-4896.jpg?semt=ais_hybrid&w=740&q=80" alt="Imagem representativa da disciplina INF 321">
+                <p> Para acesar as aulas, acesse via <a href="ufv.br" target="_blank">Disciplina INF 321</a>.</p>
+            </section>
+            <section id="ementa">
+                <h2>Topicos abordados na disciplina INF 321</h2>
+                <input type="text" id ="text-busca" placeholder="Buscar topico...">
+                <ol id="topicos-lista">
+                    <li> Introducao a WEB</li>
+                    <li> HTML</li>
+                    <li> CSS</li>
+                    <li> JavaScript</li>
+                </ol>
+            </section>
+            <section id="horarios">
+                <h2> Horarios da Disciplina INF 321</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Dia da Semana</th>
+                            <th>Horario</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Segunda-feira</td>
+                            <td>08:00 - 10:00</td>
+                        </tr>
+                        <tr>
+                            <td>Quarta-feira</td>
+                            <td>08:00 - 10:00</td>
+                        </tr>
+                        <tr>
+                            <td>Sexta-feira</td>
+                            <td>08:00 - 10:00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section id="form">
+                <h2> Formulário de Duvidas da Disciplina INF 321</h2>
+                <form action="\URL" method = "post" id="duvidas-form">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="duvida">Duvida relativa à disciplina:</label>
+                    <textarea id="duvida" name="duvida" required></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+            </section>
+            <section id="interesse">
+                <h2> Interesse em participar da disciplina INF 321</h2>
+                <button id="interesse-button">Clique aqui para demonstrar interesse</button>
+                <p id="interesse-message">Pessoas interessadas: <span id="interesse-count">0</span></p>
+
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 Disciplina INF 321. Todos os direitos reservados.</p>
+        </footer>
+        <script src="app.js"></script>
+    </body>
+    
