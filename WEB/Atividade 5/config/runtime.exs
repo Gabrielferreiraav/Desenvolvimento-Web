@@ -40,22 +40,17 @@ if config_env() == :dev do
 end
 
 if config_env() == :prod do
-  database_url =
-    System.get_env("DATABASE_URL") ||
-      raise """
-      environment variable DATABASE_URL is missing.
-      For example: ecto://USER:PASS@HOST/DATABASE
-      """
+  database_url = System.get_env("DATABASE_URL")
 
-  maybe_ipv6 = if System.get_env("ECTO_IPV6") in ~w(true 1), do: [:inet6], else: []
+  if database_url do
+    maybe_ipv6 = if System.get_env("ECTO_IPV6") in ~w(true 1), do: [:inet6], else: []
 
-  config :hello, Hello.Repo,
-    # ssl: true,
-    url: database_url,
-    pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
-    # For machines with several cores, consider starting multiple pools of `pool_size`
-    # pool_count: 4,
-    socket_options: maybe_ipv6
+    config :hello, Hello.Repo,
+      # ssl: true,
+      url: database_url,
+      pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
+      socket_options: maybe_ipv6
+  end
 
   # The secret key base is used to sign/encrypt cookies and other secrets.
   # A default value is used in config/dev.exs and config/test.exs but you
@@ -70,6 +65,7 @@ if config_env() == :prod do
       """
 
   host = System.get_env("PHX_HOST") || "example.com"
+  port = String.to_integer(System.get_env("PORT") || "4000")
 
   config :hello, :dns_cluster_query, System.get_env("DNS_CLUSTER_QUERY")
 
@@ -80,7 +76,8 @@ if config_env() == :prod do
       # Set it to  {0, 0, 0, 0, 0, 0, 0, 1} for local network only access.
       # See the documentation on https://bandit.hexdocs.pm/Bandit.html#t:options/0
       # for details about using IPv6 vs IPv4 and loopback vs public addresses.
-      ip: {0, 0, 0, 0, 0, 0, 0, 0}
+      ip: {0, 0, 0, 0, 0, 0, 0, 0},
+      port: port
     ],
     secret_key_base: secret_key_base
 
