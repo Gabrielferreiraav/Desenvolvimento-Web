@@ -1,0 +1,11 @@
+<h1 class="text-2xl font-bold">Showing User</h1>
+
+<div class="mt-4">
+  <.user user={@user} />
+</div>
+
+<p class="mt-4 space-x-2">
+  <.link navigate={~p"/users/#{@user.id}/edit"} class="text-amber-600 hover:underline">Edit</.link>
+  |
+  <.link navigate={~p"/users"} class="text-indigo-600 hover:underline">&larr; Back to list</.link>
+</p>

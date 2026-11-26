@@ -1,0 +1,10 @@
+<h1>Listing Videos</h1>
+
+<table>
+  <%= for video <- @videos do %>
+    <tr>
+      <td><.video video={video} /></td>
+      <td><.link navigate={~p"/videos/#{video.id}"}>View</.link></td>
+    </tr>
+  <% end %>
+</table>
