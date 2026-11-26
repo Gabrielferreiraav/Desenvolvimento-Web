@@ -1,0 +1,13 @@
+<Layouts.flash_group flash={@flash} />
+<section class="p-8">
+  <h1 class="text-3xl font-bold"><%= gettext "Welcome to %{name}!", name: "Rumbl.io" %></h1>
+  <p class="mt-2 text-lg text-zinc-600">Rumbl out loud.</p>
+  <div class="mt-6 flex gap-4">
+    <.link navigate={~p"/videos"} class="font-semibold text-indigo-600 hover:underline">
+      Ir para Vídeos &rarr;
+    </.link>
+    <.link navigate={~p"/users"} class="font-semibold text-indigo-600 hover:underline">
+      Ir para Usuários &rarr;
+    </.link>
+  </div>
+</section>
